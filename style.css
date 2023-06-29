@@ -1,0 +1,40 @@
+body {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 290px;
+}
+
+
+.image-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .image-container img {
+    display: block;
+    width: 400px; /* Ajusta el valor según el tamaño deseado */
+    height: auto; /* Esto mantiene la proporción de la imagen */
+    border-radius: 15px;
+  }
+  
+  .image-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Color del overlay */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .image-container:hover::before {
+    opacity: 1;
+  }
+  
+  .image-container:hover img {
+    filter: blur(4px); /* Ajusta el valor de desenfoque según lo deseado */
+  }
